@@ -63,7 +63,7 @@ function updateRows() {
 }
 
 function updateDetals() {
-    if(indexRow != -1) {
+    if(indexRow !== -1) {
         const item = items[indexRow-1];
         const name = `${item.person.firstname} ${item.person.lastname}`;
         const car = item.car;
