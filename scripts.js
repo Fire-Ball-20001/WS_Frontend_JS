@@ -1,7 +1,6 @@
 import items from './files/motorists.json' assert {type:"json"};
 let index_row = -1
 window.onload = function() {
-    console.log(items)
     const table = document.getElementById("table")
     const tbody = document.createElement("tbody")
 
@@ -38,18 +37,16 @@ function click_row(event) {
     const index = event.target.parentElement.rowIndex
     const table = document.getElementById("table")
     updateRows()
-    table.rows[index].style.backgroundColor = "#ffff00"
+    table.rows[index].classList.add("active-row")
     index_row = index
     updateDetals()
 }
 
 function updateRows() {
-    const table = document.getElementById("table")
-    if(index_row!=-1)
-    {
-        table.rows[index_row].style.backgroundColor = "inherit"
-        index_row = -1
-    }
+    const temp = document.getElementsByClassName("active-row")
+    for(let i = 0;i<temp.length;i++) 
+        temp[i].classList.remove("active-row")
+    index_row = -1
 }
 
 function updateDetals() {

@@ -65,3 +65,7 @@ th {
 .car__wrapper__section {
   display: flex;
 }
+
+.active-row {
+  background-color: #ffff00;
+}
