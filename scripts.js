@@ -6,27 +6,25 @@ let indexRow = -1;
 window.onload = function() {
     const table = document.getElementById("table");
     const tbody = document.createElement("tbody");
+    
 
     items.forEach(element => {
-        let cell = document.createElement("td");
         const row = document.createElement("tr");
 
-        cell.appendChild(document.createTextNode(`${element.person.firstname} ${element.person.lastname}`));
-        row.appendChild(cell);
+        const oneRow = {
+            name: `${element.person.firstname} ${element.person.lastname}`,
+            manufacturer: element.car.manufacturer,
+            model: element.car.model,
+            year: element.car.year
+        };
 
-        cell = document.createElement("td");
-        cell.appendChild(document.createTextNode(element.car.manufacturer));
-        row.appendChild(cell);
-
-        cell = document.createElement("td");
-        cell.appendChild(document.createTextNode(element.car.model));
-        row.appendChild(cell);
-
-        cell = document.createElement("td");
-        cell.appendChild(document.createTextNode(element.car.year));
-        row.appendChild(cell);
-
-        row.onclick=clickRow;
+        Object.values(oneRow).forEach(cellText => {
+            const cell = document.createElement("td");
+            cell.appendChild(document.createTextNode(cellText));
+            row.appendChild(cell);
+        });
+        
+        row.onclick = clickRow;
         tbody.appendChild(row);
     });
 
