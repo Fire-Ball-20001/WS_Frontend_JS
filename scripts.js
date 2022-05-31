@@ -64,16 +64,20 @@ function updateRows() {
 
 function updateDetals() {
     if(indexRow != -1) {
-        const name = `${items[indexRow-1].person.firstname} ${items[indexRow-1].person.lastname}`;
+        const item = items[indexRow-1];
+        const name = `${item.person.firstname} ${item.person.lastname}`;
+        const car = item.car;
+        
+
         document.getElementById("person_name").textContent = name;
-        document.getElementById("car_manuf").textContent=items[indexRow-1].car.manufacturer;
-        document.getElementById("car_model").textContent=items[indexRow-1].car.model;
-        document.getElementById("car_type").textContent=items[indexRow-1].car.type;
-        document.getElementById("car_vin").textContent=items[indexRow-1].car.vin;
-        document.getElementById("car_year").textContent=items[indexRow-1].car.year;
-        document.getElementById("car_color").textContent=items[indexRow-1].car.color;
-        document.getElementById("car_color").style.color=items[indexRow-1].car.color;
-        document.getElementById("car_cabr").checked=items[indexRow-1].car.isConvertible;
+        document.getElementById("car_manuf").textContent=car.manufacturer;
+        document.getElementById("car_model").textContent=car.model;
+        document.getElementById("car_type").textContent=car.type;
+        document.getElementById("car_vin").textContent=car.vin;
+        document.getElementById("car_year").textContent=car.year;
+        document.getElementById("car_color").textContent=car.color;
+        document.getElementById("car_color").style.color=car.color;
+        document.getElementById("car_cabr").checked=car.isConvertible;
         document.getElementById("details_section").style.display = "block";
     } else {
         document.getElementById("person_name").textContent = "None";
