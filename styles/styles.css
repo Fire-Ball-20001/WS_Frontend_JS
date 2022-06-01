@@ -49,6 +49,7 @@ th {
   gap: 5px 5px;
 } 
 
+.car-section__text,
 .wrapper__text {
   font-size: 17px;
   padding: 0px;
@@ -62,6 +63,7 @@ th {
 
 }
 
+.car-wrapper__section,
 .car__wrapper__section {
   display: flex;
 }

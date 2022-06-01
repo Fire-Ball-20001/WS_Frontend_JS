@@ -7,7 +7,6 @@ window.onload = function() {
     const table = document.getElementById("table");
     const tbody = document.createElement("tbody");
     
-
     items.forEach(element => {
         const row = document.createElement("tr");
 
