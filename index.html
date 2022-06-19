@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Test Script</title>
+    <script type="module" src="scripts.js" ></script>
+</head>
+<body class="body" >
+    <header>
+        <h1 class="body__title">Motorists</h1>
+    </header>
+    <main class="body__main main">
+        <table id="table" class="main__table" cellspacing="0px">
+            <thead>
+                <tr>
+                    <th style="padding-right: 0px;" >Владелец</th>
+                    <th>Производитель</th>
+                    <th>Марка</th>
+                    <th>Год выпуска</th>
+                </tr>
+            </thead>
+        </table>
+        <section id="details_section" style="display: none;">
+            <fieldset class="main__detals detals">
+                <div class="detals__wrapper wrapper">
+                    <div class="details__wrapper__name car__wrapper__section">
+                        <p class="wrapper__text" >Имя: </p>
+                        <p id="person_name" class="wrapper__text" >None</p>
+                    </div>
+                    <div><p class="wrapper__text" >Машина: </p></div>
+                    <fieldset class="wrapper__car car">
+                        <div class="car__wrapper wrapper car-wrapper">
+                            <section  class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Производитель: </p>
+                                <p id="car_manuf" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Модель: </p>
+                                <p id="car_model" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Тип: </p>
+                                <p id="car_type" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Номер кузова: </p>
+                                <p id="car_vin" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Год: </p>
+                                <p id="car_year" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Цвет: </p>
+                                <p id="car_color" class="car-section__text">None</p>
+                            </section>
+                            <section class="car-wrapper__section car-section">
+                                <p class="car-section__text" >Кабриолет: </p>
+                                <input id="car_cabr" type="checkbox" disabled="true">
+                            </section>
+                        </div>
+                    </fieldset>
+                </div>
+            </fieldset>
+        </section>
+    </main>
+</body>
+</html>
