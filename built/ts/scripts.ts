@@ -1,4 +1,5 @@
 import items from "./files/motorists.json" assert {type: "json"};
+
 let indexRow: number = -1;
 let detailsSection: Detals;
 
@@ -6,7 +7,7 @@ window.onload = function () {
   const table: HTMLTableElement = document.getElementById(
     "table"
   ) as HTMLTableElement;
-  const tbody = document.createElement("tbody");
+  const tbody: HTMLTableSectionElement = document.createElement("tbody");
 
   detailsSection = new Detals(
     document.getElementById("person_name") as HTMLElement,
@@ -21,17 +22,17 @@ window.onload = function () {
   );
   detailsSection.clear();
 
-  items.forEach((element) => {
+  items.forEach((element: OneDataElement) => {
     const row = document.createElement("tr");
 
-    const oneRow = {
+    const oneRow : SmallDataElement = {
       name: `${element.person.firstname} ${element.person.lastname}`,
       manufacturer: element.car.manufacturer,
       model: element.car.model,
       year: element.car.year,
     };
 
-    Object.values(oneRow).forEach((cellText) => {
+    Object.values(oneRow).forEach((cellText: string | number) => {
       const cell = document.createElement("td");
       cell.appendChild(document.createTextNode(cellText.toString()));
       row.appendChild(cell);
@@ -44,7 +45,7 @@ window.onload = function () {
   table.appendChild(tbody);
 };
 
-window.onclick = function (event) {
+window.onclick = function (event: MouseEvent) {
   if (event.target !== null) {
     const target: Element = <Element>event.target;
     if (target.nodeName != "TD") {
@@ -63,7 +64,7 @@ function clickRow(event: MouseEvent) {
       index = (<HTMLTableRowElement>target.parentElement).rowIndex;
     }
   }
-  
+
   const table: HTMLTableElement = document.getElementById(
     "table"
   ) as HTMLTableElement;
@@ -173,6 +174,29 @@ class Detals {
     carYear: string;
     carColor: string;
     carCabr: boolean;
+  }
+
+  interface OneDataElement {
+    id: string;
+    person: {
+        firstname: string;
+        lastname: string;
+    };
+    car: {
+        manufacturer: string;
+        model: string;
+        type: string;
+        vin: string;
+        year: number;
+        color: string;
+        isConvertible: boolean;
+    };
+  }
+  interface SmallDataElement {
+    name: string;
+    manufacturer: string;
+    model: string;
+    year: number;
   }
 
 
