@@ -84,10 +84,10 @@ function clickRow(event: MouseEvent) {
 
 function updateRows() {
   const temp = document.getElementsByClassName("active-row");
-
-  for (let i = 0; i < temp.length; i++) {
-    temp[i].classList.remove("active-row");
-  }
+  
+  Array.from(temp).forEach((element: Element) => {
+    element.classList.remove("active-row")
+  })
 
   indexRow = -1;
 }
