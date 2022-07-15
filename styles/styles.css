@@ -64,7 +64,7 @@ th {
 }
 
 .car-wrapper__section,
-.car__wrapper__section {
+.car-wrapper-section {
   display: flex;
 }
 
