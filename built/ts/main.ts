@@ -87,7 +87,7 @@ function updateRows() {
   
   Array.from(temp).forEach((element: Element) => {
     element.classList.remove("active-row")
-  })
+  });
 
   indexRow = -1;
 }
